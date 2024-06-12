@@ -1,10 +1,11 @@
 import React from 'react';
+import * as Styled from './Main.styles';
 
 const Main = () => {
     return (
-        <div>        
-            <h3>Hello World</h3>
-        </div>
+        <Styled.Container>
+            <h1>Hello World!</h1>
+        </Styled.Container>
     )
 }
 
