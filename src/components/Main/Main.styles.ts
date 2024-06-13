@@ -20,8 +20,8 @@ export const menuContainer = styled.div`
     padding: 10px;
     cursor: pointer;
     transition: 0.3s ease;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 10px;
     position: absolute;
 
 
@@ -42,7 +42,7 @@ export const smallHeader = styled.h2`
 `
 
 export const bigHeader = styled.h1`
-    color: blue;
+    color: #1C4480;
     font-weight: 300;
     font-size: 20px;
     margin: 5px;
@@ -120,5 +120,15 @@ export const button = styled.button`
     justify-content: center;
     color: white;
     font-family: "Roboto", sans-serif;
+    transition: 0.1s ease;
+    font-size: 15px;
+
+    &:hover {
+        width: 130px;
+        height: 130px;
+        top: -5px;
+        left: -5px;
+        font-size: 18px;
+    }
 `
 

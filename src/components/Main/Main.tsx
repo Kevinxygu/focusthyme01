@@ -3,7 +3,7 @@ import * as Styled from './Main.styles';
 
 const Main = () => {
     const STORAGE_KEY: string = "list"
-    const [isActive, setIsActive] = useState<boolean>(true);
+    const [isActive, setIsActive] = useState<boolean>(false);
     const [websiteList, setWebsiteList] = useState<string[]>([]);
 
 

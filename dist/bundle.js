@@ -14,8 +14,8 @@ font-family: "Roboto", sans-serif;
     padding: 10px;
     cursor: pointer;
     transition: 0.3s ease;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 10px;
     position: absolute;
 
 
@@ -30,7 +30,7 @@ font-family: "Roboto", sans-serif;
     margin-top: 50px;
     font-size: 12px;
 `,t.bigHeader=a.default.h1`
-    color: blue;
+    color: #1C4480;
     font-weight: 300;
     font-size: 20px;
     margin: 5px;
@@ -102,4 +102,14 @@ margin-top: 80px;
     justify-content: center;
     color: white;
     font-family: "Roboto", sans-serif;
+    transition: 0.1s ease;
+    font-size: 15px;
+
+    &:hover {
+        width: 130px;
+        height: 130px;
+        top: -5px;
+        left: -5px;
+        font-size: 18px;
+    }
 `},14:function(e,t,n){"use strict";var r=this&&this.__createBinding||(Object.create?function(e,t,n,r){void 0===r&&(r=n);var a=Object.getOwnPropertyDescriptor(t,n);a&&!("get"in a?!t.__esModule:a.writable||a.configurable)||(a={enumerable:!0,get:function(){return t[n]}}),Object.defineProperty(e,r,a)}:function(e,t,n,r){void 0===r&&(r=n),e[r]=t[n]}),a=this&&this.__setModuleDefault||(Object.create?function(e,t){Object.defineProperty(e,"default",{enumerable:!0,value:t})}:function(e,t){e.default=t}),l=this&&this.__importStar||function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)"default"!==n&&Object.prototype.hasOwnProperty.call(e,n)&&r(t,e,n);return a(t,e),t};Object.defineProperty(t,"__esModule",{value:!0});const o=l(n(540)),i=l(n(288));t.default=()=>{const[e,t]=(0,o.useState)(!0),[n,r]=(0,o.useState)([]);return o.default.createElement(o.default.Fragment,null,o.default.createElement(i.GlobalStyle,null),o.default.createElement(i.Container,null,o.default.createElement(i.menuContainer,null,o.default.createElement(i.menuIcon,{src:"images/menu.png"})),o.default.createElement(i.smallHeader,null,"Focus mode is"),o.default.createElement(i.bigHeader,null,e?"ON":"OFF"),o.default.createElement(i.buttonContainer,null,o.default.createElement(i.background,{className:"background1"}),o.default.createElement(i.background,{className:"background2"}),o.default.createElement(i.button,null,"START"))))}},900:function(e,t,n){"use strict";var r=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0});const a=r(n(540)),l=r(n(338)),o=r(n(14));l.default.createRoot(document.getElementById("root")).render(a.default.createElement(a.default.StrictMode,null,a.default.createElement(o.default,null)))}},t={};function n(r){var a=t[r];if(void 0!==a)return a.exports;var l=t[r]={exports:{}};return e[r].call(l.exports,l,l.exports,n),l.exports}n.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return n.d(t,{a:t}),t},n.d=(e,t)=>{for(var r in t)n.o(t,r)&&!n.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},n.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),n.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.nc=void 0,n(900)})();
