@@ -57,10 +57,10 @@ margin-top: 80px;
         transform: scale(1, 1);
       }
       50% {
-        opacity: 0.3;
+        opacity: 0.1;
       }
       100% {
-        transform: scale(1.5);
+        transform: scale(1.75);
         opacity: 0;
       }
     }
@@ -68,8 +68,9 @@ margin-top: 80px;
 
   &.background2 {
     animation: pulse2 1.2s ease infinite;
-    background: #1C4480;
+    background: #99BFF9;
     z-index: -1;
+    animation-delay: 0.3s; // add to delay
 
     @keyframes pulse2 {
       0% {
