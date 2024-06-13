@@ -35,30 +35,89 @@ export const menuIcon = styled.img`
 `;
 
 export const smallHeader = styled.h2`
-color: grey;
-font-weight: 200;
-margin-top: 50px;
-font-size: 12px;
+    color: grey;
+    font-weight: 200;
+    margin-top: 50px;
+    font-size: 12px;
 `
 
 export const bigHeader = styled.h1`
-color: blue;
-font-weight: 300;
-font-size: 20px;
-margin: 5px;
-`
-
-export const butttonContainer = styled.div`
-width: 10px;
-height: 10px;
-background-color: red;
+    color: blue;
+    font-weight: 300;
+    font-size: 20px;
+    margin: 5px;
 `
 
 export const buttonContainer = styled.div`
+position: relative;
+width: 120px;
+height: 120px;
+margin: auto;
+margin-top: 80px;
 `
 
 export const background = styled.div`
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &.background1 {
+    animation: pulse1 1.2s ease infinite;
+    background: #99BFF9;
+
+    @keyframes pulse1 {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+  }
+
+  &.background2 {
+    animation: pulse2 1.2s ease infinite;
+    background: #1C4480;
+    z-index: -1;
+
+    @keyframes pulse2 {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+  }
 `
 
-export const button = styled.div`
+export const button = styled.button`
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    z-index: 99;
+    border: none;
+    background: #1C4480;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-family: "Roboto", sans-serif;
 `
+

@@ -22,11 +22,12 @@ const Main = () => {
                 {isActive ? "ON" : "OFF"}
             </Styled.bigHeader>
             <Styled.buttonContainer>
-                <Styled.background>
+                <Styled.background className="background1"></Styled.background>
+                <Styled.background className="background2"></Styled.background>
+
                 <Styled.button>
-                    
+                    START
                 </Styled.button>
-                </Styled.background>
             </Styled.buttonContainer>
         </Styled.Container>
         </>
