@@ -3,7 +3,7 @@ import * as Styled from './Main.styles';
 
 const Main = () => {
     const STORAGE_KEY: string = "list"
-    const [isActive, setIsActive] = useState<boolean>(false);
+    const [isActive, setIsActive] = useState<boolean>(true);
     const [websiteList, setWebsiteList] = useState<string[]>([]);
 
 
@@ -21,9 +21,13 @@ const Main = () => {
             <Styled.bigHeader>
                 {isActive ? "ON" : "OFF"}
             </Styled.bigHeader>
-            <Styled.bigButton>
-
-            </Styled.bigButton>
+            <Styled.buttonContainer>
+                <Styled.background>
+                <Styled.button>
+                    
+                </Styled.button>
+                </Styled.background>
+            </Styled.buttonContainer>
         </Styled.Container>
         </>
     )
