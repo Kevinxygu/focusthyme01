@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import * as Styled from './Main.styles';
 
+// Main page component
 const Main = () => {
     const STORAGE_KEY: string = "list"
     const [isActive, setIsActive] = useState<boolean>(false);
