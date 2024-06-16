@@ -7,6 +7,9 @@ const Main = () => {
     const [isActive, setIsActive] = useState<boolean>(false);
     const [websiteList, setWebsiteList] = useState<string[]>([]);
 
+    const handleButtonClick = () => {
+        setIsActive(!isActive);
+    }
 
     return (
         <>
@@ -16,18 +19,21 @@ const Main = () => {
                 <Styled.menuIcon src='images/menu.png'/>
             </Styled.menuContainer>
 
-            <Styled.smallHeader>
+            <Styled.smallHeader isActive={isActive}>
                 Focus mode is
             </Styled.smallHeader>
-            <Styled.bigHeader>
+            <Styled.bigHeader isActive={isActive}>
                 {isActive ? "ON" : "OFF"}
             </Styled.bigHeader>
             <Styled.buttonContainer>
-                <Styled.background className="background1"></Styled.background>
-                <Styled.background className="background2"></Styled.background>
-
-                <Styled.button>
-                    START
+            {!isActive && (
+                        <>
+                            <Styled.background className="background1" />
+                            <Styled.background className="background2" />
+                        </>
+                    )}
+                <Styled.button isActive={isActive}>
+                    {isActive ? "STOP" : "START"}
                 </Styled.button>
             </Styled.buttonContainer>
         </Styled.Container>

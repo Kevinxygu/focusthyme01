@@ -34,14 +34,14 @@ export const menuIcon = styled.img`
     max-width: 30px;
 `;
 
-export const smallHeader = styled.h2`
+export const smallHeader = styled.h2<{ isActive: boolean }>`
     color: grey;
     font-weight: 200;
     margin-top: 50px;
     font-size: 12px;
 `
 
-export const bigHeader = styled.h1`
+export const bigHeader = styled.h1<{ isActive: boolean }>`
     color: #1C4480;
     font-weight: 300;
     font-size: 20px;
@@ -103,7 +103,7 @@ export const background = styled.div`
   }
 `
 
-export const button = styled.button`
+export const button = styled.button<{ isActive: boolean }>`
     width: 120px;
     height: 120px;
     border-radius: 100%;
