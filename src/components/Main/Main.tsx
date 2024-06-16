@@ -3,16 +3,39 @@ import * as Styled from './Main.styles';
 
 // Main page component
 const Main = () => {
-    const STORAGE_KEY: string = "list";
+    const STORAGE_KEY_LIST: string = "list";
+    const STORAGE_KEY_ACTIVE: string = "active";
     const [isActive, setIsActive] = useState<boolean>(false);
-    const [websiteList, setWebsiteList] = useState<string[]>(["www.youtube.com", "anotherwebsite.com"]);
+    const [websiteList, setWebsiteList] = useState<string[]>([]);
     const [shouldBlock, setShouldBlock] = useState<boolean>(false);
 
     const handleButtonClick = () => {
-        setIsActive(!isActive);
+        if (isActive) {
+            localStorage.setItem(STORAGE_KEY_ACTIVE, String(false));
+            setIsActive(false);
+        } else {
+            localStorage.setItem(STORAGE_KEY_ACTIVE, String(true));
+            setIsActive(true);
+        }
     };
 
     useEffect(() => {
+        // load in values from localStorage
+        // load in website list
+        const tempList = ["www.youtube.com", "www.reddit.com"]
+        localStorage.setItem(STORAGE_KEY_LIST, JSON.stringify(tempList));
+        const websiteListJSON : string[] = JSON.parse(localStorage.getItem(STORAGE_KEY_LIST) as string);
+        if (websiteListJSON) {
+            setWebsiteList(websiteListJSON);
+        } // consider: may need to add a dependency
+
+        // load in active
+        const isActiveJSON : boolean = JSON.parse(localStorage.getItem(STORAGE_KEY_ACTIVE) as string);
+        if (typeof isActiveJSON !== 'undefined' && isActiveJSON !== null) {
+            setIsActive(isActiveJSON);
+        }
+
+        // start script to determine shouldBlock
         if (isActive) {
             const currentUrl = window.location.hostname;
             const shouldBlockSite = websiteList.some(site => currentUrl.includes(site));
@@ -22,28 +45,6 @@ const Main = () => {
         }
     }, [isActive, websiteList]);
 
-    useEffect(() => {
-        if (shouldBlock) {
-            const overlay = document.createElement('div');
-            overlay.id = 'focus-overlay';
-            overlay.style.position = 'fixed';
-            overlay.style.top = '0';
-            overlay.style.left = '0';
-            overlay.style.width = '100%';
-            overlay.style.height = '100%';
-            overlay.style.backgroundImage = 'url(images/overlay.png)';
-            overlay.style.backgroundSize = 'cover';
-            overlay.style.zIndex = '10000';
-            overlay.style.pointerEvents = 'none'; // Prevent interaction with the overlay
-            document.body.innerHTML = ''; // Clear the existing content
-            document.body.appendChild(overlay);
-        } else {
-            const overlay = document.getElementById('focus-overlay');
-            if (overlay) {
-                overlay.remove();
-            }
-        }
-    }, [shouldBlock]);
 
     return (
         <>

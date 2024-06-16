@@ -30,6 +30,7 @@ module.exports = {
       patterns: [
         { from: 'public/manifest.json', to: 'manifest.json' },
         { from: 'public/images', to: 'images' },
+        { from: 'scripts', to: 'scripts'}
       ],
     }),
   ],
