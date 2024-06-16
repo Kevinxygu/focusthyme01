@@ -10,10 +10,11 @@ font-family: "Roboto", sans-serif;
 }
 `
 
-export const Container = styled.div`
+export const Container = styled.div<{ isActive: boolean }>`
     width: 276px;
-    height: 333px;
+    height: 380px;
     text-align: center;
+    background-image: ${({ isActive }) => (isActive ? 'url(images/ON-background.gif)' : '#none')};
 `;
 
 export const menuContainer = styled.div`
@@ -35,14 +36,14 @@ export const menuIcon = styled.img`
 `;
 
 export const smallHeader = styled.h2<{ isActive: boolean }>`
-    color: grey;
+    color: ${({ isActive }) => (isActive ? '#FFFFFF' : '#BABABA')};
     font-weight: 200;
-    margin-top: 50px;
+    padding-top: 50px;
     font-size: 12px;
 `
 
 export const bigHeader = styled.h1<{ isActive: boolean }>`
-    color: #1C4480;
+    color: ${({ isActive }) => (isActive ? '#FFFFFF' : '#1C4480')};;
     font-weight: 300;
     font-size: 20px;
     margin: 5px;
@@ -108,7 +109,7 @@ export const button = styled.button<{ isActive: boolean }>`
     height: 120px;
     border-radius: 100%;
     z-index: 99;
-    border: none;
+    border: ${({ isActive }) => (isActive ? '#FFFFFF' : '#1C4480')};;
     background: #1C4480;
     cursor: pointer;
     outline: none;

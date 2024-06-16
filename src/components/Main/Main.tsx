@@ -14,9 +14,9 @@ const Main = () => {
     return (
         <>
         <Styled.GlobalStyle />
-        <Styled.Container>
+        <Styled.Container isActive={isActive}>
             <Styled.menuContainer>
-                <Styled.menuIcon src='images/menu.png'/>
+                <Styled.menuIcon src={isActive ? 'images/menu-W.png' : 'images/menu.png'}/>
             </Styled.menuContainer>
 
             <Styled.smallHeader isActive={isActive}>
@@ -32,7 +32,7 @@ const Main = () => {
                             <Styled.background className="background2" />
                         </>
                     )}
-                <Styled.button isActive={isActive}>
+                <Styled.button isActive={isActive} onClick={handleButtonClick}>
                     {isActive ? "STOP" : "START"}
                 </Styled.button>
             </Styled.buttonContainer>
