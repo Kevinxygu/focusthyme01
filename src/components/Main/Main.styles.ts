@@ -109,8 +109,8 @@ export const button = styled.button<{ isActive: boolean }>`
     height: 120px;
     border-radius: 100%;
     z-index: 99;
-    border: ${({ isActive }) => (isActive ? '#FFFFFF' : '#1C4480')};;
-    background: #1C4480;
+    border: ${({ isActive }) => (isActive ? 'solid 3px white' : 'none')};
+    background: ${({ isActive }) => (isActive ? 'transparent' : '#1C4480')};
     cursor: pointer;
     outline: none;
     position: absolute;
