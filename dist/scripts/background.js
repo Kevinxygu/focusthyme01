@@ -1,1 +1,1 @@
-console.log("This is the background!");
+console.log("This is the background!");const STORAGE_KEY_LIST="list",STORAGE_KEY_ACTIVE="active";chrome.runtime.onInstalled.addListener((()=>{console.log("Installed!")})),chrome.action.onClicked.addListener((e=>{chrome.scripting.executeScript({target:{tabId:e.id},files:["content.js"]})}));
