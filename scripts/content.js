@@ -7,7 +7,7 @@ const list = JSON.parse(localStorage.getItem(STORAGE_KEY_LIST));
 
 const currentDomain = window.location.hostname;
 
-if (window.location.hostname == "www.youtube.com") {
+if (list.includes(currentDomain) && (isActve == "false" || isActive == true)) {
     document.body.innerHTML = '<p> pp </p> <div id="image"></div>';
 
     const img = document.createElement('img');

@@ -35,6 +35,13 @@ const Main = () => {
             setIsActive(isActiveJSON);
         }
 
+        // testing
+
+        console.log(isActiveJSON);
+        console.log(typeof isActiveJSON);
+
+        console.log(websiteListJSON);
+        console.log(typeof websiteListJSON);
         // start script to determine shouldBlock
         if (isActive) {
             const currentUrl = window.location.hostname;
