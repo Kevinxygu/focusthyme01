@@ -2,12 +2,15 @@ console.log("This is the content!")
 const STORAGE_KEY_LIST = "list";
 const STORAGE_KEY_ACTIVE = "active";
 
-const isActive = JSON.parse(localStorage.getItem(STORAGE_KEY_ACTIVE));
-const list = JSON.parse(localStorage.getItem(STORAGE_KEY_LIST));
+// const isActive = JSON.parse(localStorage.getItem(STORAGE_KEY_ACTIVE));
+// const list = JSON.parse(localStorage.getItem(STORAGE_KEY_LIST));
 
 const currentDomain = window.location.hostname;
 
-if (list.includes(currentDomain) && (isActve == "false" || isActive == true)) {
+// temporary; just for usefulness in short term (need to add later!)
+const toBlock = ["www.youtube.com", "www.instagram.com", "www.reddit.com"]
+
+if (toBlock.includes(currentDomain)) {
     document.body.innerHTML = '<p> pp </p> <div id="image"></div>';
 
     const img = document.createElement('img');
