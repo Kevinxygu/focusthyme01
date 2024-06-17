@@ -10,7 +10,7 @@ const currentDomain = window.location.hostname;
 // temporary; just for usefulness in short term (need to add later!)
 const toBlock = ["www.youtube.com", "www.instagram.com", "www.reddit.com"]
 
-if (toBlock.includes(currentDomain)) {
+if (toBlock.some(site => currentDomain.includes(site))) {
     document.body.innerHTML = '<p> pp </p> <div id="image"></div>';
 
     const img = document.createElement('img');
