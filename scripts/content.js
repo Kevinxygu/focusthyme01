@@ -6,14 +6,6 @@ const isActive = JSON.parse(localStorage.getItem(STORAGE_KEY_ACTIVE));
 const list = JSON.parse(localStorage.getItem(STORAGE_KEY_LIST));
 
 const currentDomain = window.location.hostname;
-console.log(currentDomain);
-console.log(typeof currentDomain);
-
-console.log(isActive);
-console.log(typeof isActive);
-
-console.log(list);
-console.log(typeof list);
 
 if (window.location.hostname == "www.youtube.com") {
     document.body.innerHTML = '<p> pp </p> <div id="image"></div>';
