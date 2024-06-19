@@ -58,7 +58,7 @@ const Main = () => {
         <>
             <Styled.GlobalStyle />
             <Styled.Container isActive={isActive}>
-                <Styled.menuContainer>
+                <Styled.menuContainer onClick={() => setWebsiteListVisible(true)}>
                     <Styled.menuIcon src={isActive ? 'images/menu-W.png' : 'images/menu.png'} />
                 </Styled.menuContainer>
 

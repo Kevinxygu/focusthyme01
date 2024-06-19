@@ -12,9 +12,11 @@ interface WebsiteListProps {
 const WebsiteList: React.FC<WebsiteListProps> = ({visible, onHide}) => {
 
     return (
-        <div>
-            
-        </div>
+        <Styled.Container visible={visible}>
+            <p>Hello World!</p>
+            <button onClick={onHide}>Hide</button>
+
+        </Styled.Container>
     )
 }
 

@@ -11,3 +11,15 @@ padding: 0;
 font-family: "Roboto", sans-serif;
 }
 `
+
+export const Container = styled.div<{ visible: boolean }>`
+    width: 276px;
+    height: 380px;
+    text-align: center;
+    left: ${({ visible }) => (visible ? '0' : '-100%')};
+    top: 0;
+    transition: left 0.5s ease;
+    z-index: 50;
+    position: fixed;
+    background-color: #FFFFFF;
+`;
