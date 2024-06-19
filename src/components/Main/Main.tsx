@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import * as Styled from './Main.styles';
 
-// Main page component
+// Main page component; has the main button + buttons for WebsiteList.tsx
 const Main = () => {
     const STORAGE_KEY_LIST: string = "list";
     const STORAGE_KEY_ACTIVE: string = "active";
