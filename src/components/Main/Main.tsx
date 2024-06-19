@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import * as Styled from './Main.styles';
+import WebsiteList from '../WebsiteList/WebsiteList';
 
 // Main page component; has the main button + buttons for WebsiteList.tsx
 const Main = () => {
@@ -8,6 +9,7 @@ const Main = () => {
     const [isActive, setIsActive] = useState<boolean>(false);
     const [websiteList, setWebsiteList] = useState<string[]>([]);
     const [shouldBlock, setShouldBlock] = useState<boolean>(false);
+    const [websiteListVisible, setWebsiteListVisible] = useState<boolean>(false);
 
     const handleButtonClick = () => {
         if (isActive) {
@@ -36,7 +38,6 @@ const Main = () => {
         }
 
         // testing
-
         console.log(isActiveJSON);
         console.log(typeof isActiveJSON);
 
@@ -78,6 +79,7 @@ const Main = () => {
                         {isActive ? "STOP" : "START"}
                     </Styled.button>
                 </Styled.buttonContainer>
+                <WebsiteList visible={websiteListVisible} onHide={() => setWebsiteListVisible(false)} />
             </Styled.Container>
         </>
     );
