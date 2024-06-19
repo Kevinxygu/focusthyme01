@@ -1,3 +1,5 @@
+// content script to check current website and block if on blocklist
+
 console.log("This is the content!")
 const STORAGE_KEY_LIST = "list";
 const STORAGE_KEY_ACTIVE = "active";
