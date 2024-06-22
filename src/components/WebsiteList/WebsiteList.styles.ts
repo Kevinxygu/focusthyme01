@@ -56,4 +56,5 @@ export const websiteContainer = styled.div`
     max-height: 200px;
     overflow: scroll;
     margin-top: 30px;
+    background-color: #FFFFFF;
 `

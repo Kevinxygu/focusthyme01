@@ -1,14 +1,15 @@
 import React, { useEffect, useState} from 'react';
-
+import * as Styled from './Website.styles';
 //interface for Website props
 interface WebsiteProps {
     text: string;
 }
 const Website: React.FC<WebsiteProps> = ({text}) => {
     return (
-        <div>
+        <Styled.Container>
             {text}
-        </div>
+            <Styled.Line></Styled.Line>
+        </Styled.Container>
     )
 }
 
