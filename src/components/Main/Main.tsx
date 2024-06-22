@@ -24,8 +24,8 @@ const Main = () => {
     useEffect(() => {
         // load in values from localStorage
         // load in website list
-        const tempList = ["www.youtube.com", "www.reddit.com"]
-        localStorage.setItem(STORAGE_KEY_LIST, JSON.stringify(tempList));
+        // const tempList = ["www.youtube.com", "www.reddit.com"]
+        // localStorage.setItem(STORAGE_KEY_LIST, JSON.stringify(tempList));
         const websiteListJSON : string[] = JSON.parse(localStorage.getItem(STORAGE_KEY_LIST) as string);
         if (websiteListJSON) {
             setWebsiteList(websiteListJSON);
@@ -38,11 +38,11 @@ const Main = () => {
         }
 
         // testing
-        console.log(isActiveJSON);
-        console.log(typeof isActiveJSON);
+        // console.log(isActiveJSON);
+        // console.log(typeof isActiveJSON);
 
-        console.log(websiteListJSON);
-        console.log(typeof websiteListJSON);
+        // console.log(websiteListJSON);
+        // console.log(typeof websiteListJSON);
         // start script to determine shouldBlock
         if (isActive) {
             const currentUrl = window.location.hostname;

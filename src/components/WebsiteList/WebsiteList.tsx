@@ -19,7 +19,7 @@ const WebsiteList: React.FC<WebsiteListProps> = ({visible, onHide}) => {
         // load in values from localStorage
         // load in website list
         // const tempList = ["www.youtube.com", "www.reddit.com"]
-        localStorage.setItem(STORAGE_KEY_LIST, JSON.stringify(tempList));
+        // localStorage.setItem(STORAGE_KEY_LIST, JSON.stringify(tempList));
         const websiteListJSON : string[] = JSON.parse(localStorage.getItem(STORAGE_KEY_LIST) as string);
         if (websiteListJSON) {
             setWebsiteList(websiteListJSON);
@@ -27,8 +27,8 @@ const WebsiteList: React.FC<WebsiteListProps> = ({visible, onHide}) => {
 
         // testing
 
-        console.log(websiteListJSON);
-        console.log(typeof websiteListJSON);
+        // console.log(websiteListJSON);
+        // console.log(typeof websiteListJSON);
     }, [websiteList]);
     return (
         <Styled.Container visible={visible}>
@@ -37,7 +37,7 @@ const WebsiteList: React.FC<WebsiteListProps> = ({visible, onHide}) => {
                 <Styled.backButton src='images/backArrow.png' onClick={onHide} />
             </Styled.backButtonContainer>
             <Styled.websiteContainer>            
-                {tempList.map((object, index) => {
+                {websiteList.map((object, index) => {
                 return <Website key={index} text={object} />
             })}
             </Styled.websiteContainer>
