@@ -124,6 +124,7 @@ font-family: "Roboto", sans-serif;
 font-size: 12px;
 color: #BABABA;
 font-weight: 300;
+margin: 5px 0px;
 `,t.Container=a.default.div`
 padding-top: 10px;
 width: 100%;
@@ -134,7 +135,7 @@ vertical-align: middle;
     height: 0.5px;
     width: 200px;
     background-color: #BABABA;
-    margin: 10px 0px 0px 0px;`},814:function(e,t,n){"use strict";var r=this&&this.__createBinding||(Object.create?function(e,t,n,r){void 0===r&&(r=n);var a=Object.getOwnPropertyDescriptor(t,n);a&&!("get"in a?!t.__esModule:a.writable||a.configurable)||(a={enumerable:!0,get:function(){return t[n]}}),Object.defineProperty(e,r,a)}:function(e,t,n,r){void 0===r&&(r=n),e[r]=t[n]}),a=this&&this.__setModuleDefault||(Object.create?function(e,t){Object.defineProperty(e,"default",{enumerable:!0,value:t})}:function(e,t){e.default=t}),l=this&&this.__importStar||function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)"default"!==n&&Object.prototype.hasOwnProperty.call(e,n)&&r(t,e,n);return a(t,e),t},o=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0});const i=o(n(540)),u=l(n(184));t.default=({text:e})=>i.default.createElement(u.Container,null,i.default.createElement(u.Text,null,e),i.default.createElement(u.Line,null))},344:function(e,t,n){"use strict";var r=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0}),t.websiteContainer=t.Container=t.backButton=t.backButtonContainer=t.Header=t.GlobalStyle=void 0;const a=r(n(581)),l=n(581);t.GlobalStyle=l.createGlobalStyle`
+    margin: auto;`},814:function(e,t,n){"use strict";var r=this&&this.__createBinding||(Object.create?function(e,t,n,r){void 0===r&&(r=n);var a=Object.getOwnPropertyDescriptor(t,n);a&&!("get"in a?!t.__esModule:a.writable||a.configurable)||(a={enumerable:!0,get:function(){return t[n]}}),Object.defineProperty(e,r,a)}:function(e,t,n,r){void 0===r&&(r=n),e[r]=t[n]}),a=this&&this.__setModuleDefault||(Object.create?function(e,t){Object.defineProperty(e,"default",{enumerable:!0,value:t})}:function(e,t){e.default=t}),l=this&&this.__importStar||function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)"default"!==n&&Object.prototype.hasOwnProperty.call(e,n)&&r(t,e,n);return a(t,e),t},o=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0});const i=o(n(540)),u=l(n(184));t.default=({text:e})=>i.default.createElement(u.Container,null,i.default.createElement(u.Text,null,e),i.default.createElement(u.Line,null))},344:function(e,t,n){"use strict";var r=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0}),t.websiteContainer=t.Container=t.backButton=t.backButtonContainer=t.Header=t.GlobalStyle=void 0;const a=r(n(581)),l=n(581);t.GlobalStyle=l.createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 * {
 margin: 0;
