@@ -103,7 +103,10 @@ export const TooltipText = styled.span`
 `
 
 export const SendButton = styled.img`
-    width: 20px;
-    height: 20px;
+    max-width: 20px;
     cursor: pointer;
+
+    &:hover {
+        opacity: 0.2;
+    }
 `
