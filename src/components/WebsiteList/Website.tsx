@@ -7,7 +7,7 @@ interface WebsiteProps {
 const Website: React.FC<WebsiteProps> = ({text}) => {
     return (
         <Styled.Container>
-            {text}
+            <Styled.Text>{text}</Styled.Text>
             <Styled.Line></Styled.Line>
         </Styled.Container>
     )

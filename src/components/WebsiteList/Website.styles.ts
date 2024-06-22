@@ -11,14 +11,21 @@ font-family: "Roboto", sans-serif;
 }
 `
 
-export const Container = styled.div`
-padding: 15px;
+export const Text = styled.p`
 font-size: 12px;
 color: #BABABA;
 font-weight: 300;
 `
 
+export const Container = styled.div`
+padding-top: 10px;
+width: 100%;
+text-align: center;
+align-items: center;
+`
+
 export const Line = styled.div`
-height: 1px;
-width: 75px
-background-color: #BABABA`
+    height: 0.5px;
+    width: 200px;
+    background-color: #BABABA;
+    margin: 10px 0px 0px 0px;`
