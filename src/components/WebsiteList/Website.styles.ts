@@ -11,15 +11,15 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const Text = styled.p`
-    font-size: 11px;
+    font-size: 14px;
     color: #BABABA;
     font-weight: 200;
-    margin: 5px 0px;
+    margin: 8px 0px;
     display: inline-block;
 `
 
 export const Container = styled.div`
-    padding-top: 20px;
+    padding-top: 12px;
     width: 100%;
     text-align: center;
     align-items: center;
