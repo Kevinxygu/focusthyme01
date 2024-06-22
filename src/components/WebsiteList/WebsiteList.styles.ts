@@ -105,6 +105,7 @@ export const TooltipText = styled.span`
 export const SendButton = styled.img`
     max-width: 20px;
     cursor: pointer;
+    transition: 0.3s ease;
 
     &:hover {
         opacity: 0.2;
