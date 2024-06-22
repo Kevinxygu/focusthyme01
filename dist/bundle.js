@@ -232,6 +232,7 @@ margin-top: 80px;
 `,t.SendButton=a.default.img`
     max-width: 20px;
     cursor: pointer;
+    transition: 0.3s ease;
 
     &:hover {
         opacity: 0.2;
