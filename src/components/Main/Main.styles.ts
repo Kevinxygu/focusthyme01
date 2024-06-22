@@ -4,7 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 // Styles for Main.tsx
 // comment again and again
 export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 * {
 margin: 0;
 padding: 0;
@@ -110,7 +110,7 @@ export const button = styled.button<{ isActive: boolean }>`
     width: 120px;
     height: 120px;
     border-radius: 100%;
-    z-index: 99;
+    z-index: 30;
     border: ${({ isActive }) => (isActive ? 'solid 3px white' : 'none')};
     background: ${({ isActive }) => (isActive ? 'transparent' : '#1C4480')};
     cursor: pointer;
