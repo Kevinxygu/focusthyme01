@@ -43,9 +43,9 @@ const WebsiteList: React.FC<WebsiteListProps> = ({ visible, onHide }) => {
                     onChange={(e) => setNewWebsite(e.target.value)}
                     onFocus={() => setInputFocused(true)}
                     onBlur={() => setInputFocused(false)}
-                    placeholder="Enter website URL"
+                    placeholder="Add new..."
                 />
-                {inputFocused && <Styled.TooltipText>Ideally include www in front of the website domain</Styled.TooltipText>}
+                {inputFocused && <Styled.TooltipText>Don't forget www!</Styled.TooltipText>}
                 <Styled.SendButton src='images/send.png' onClick={handleAddWebsite} />
             </Styled.InputContainer>
             <Styled.websiteContainer>

@@ -65,24 +65,40 @@ export const InputContainer = styled.div`
 `
 
 export const InputBox = styled.input`
-    border: 1px solid #BABABA;
     padding: 5px;
     font-size: 14px;
-    border-radius: 4px;
     margin-right: 10px;
+
+    border: none;
+    border-bottom: 1px solid #CCCCCC;
+    color: #BABABA;
+    font-size: 15px;
+    transition: 0.5s ease;
+    font-weight: 200;
+    width: 150px;
+
+    &:focus {
+        border-bottom: 1px solid #1C4480;
+        outline: none;
+    }
+
+    &::placeholder {
+        color: #BABABA;
+    }
 `
 
 export const TooltipText = styled.span`
-    width: 200px;
-    background-color: black;
+    width: 100px;
+    background-color: #BABABA;
     color: #fff;
     text-align: center;
     border-radius: 5px;
     padding: 5px 0;
     position: absolute;
-    top: -30px;
-    left: 50%;
+    top: 35px;
+    left: 30%;
     transform: translateX(-50%);
+    transition: 0.3s ease;
     z-index: 1;
 `
 
