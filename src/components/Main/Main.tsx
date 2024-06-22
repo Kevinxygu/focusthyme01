@@ -51,12 +51,6 @@ const Main = () => {
         } else {
             setShouldBlock(false);
         }
-        
-        // send message to content.js
-        chrome.runtime.sendMessage({
-            type: 'UDPATE_WEBSITE_LIST',
-            data: websiteList
-        })
     }, [isActive, websiteList]);
 
 
