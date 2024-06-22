@@ -66,15 +66,14 @@ export const InputContainer = styled.div`
 
 export const InputBox = styled.input`
     padding: 5px;
-    font-size: 14px;
     margin-right: 10px;
 
     border: none;
     border-bottom: 1px solid #CCCCCC;
     color: #BABABA;
-    font-size: 15px;
+    font-size: 12px;
     transition: 0.5s ease;
-    font-weight: 200;
+    font-weight: 100;
     width: 150px;
 
     &:focus {
@@ -84,6 +83,7 @@ export const InputBox = styled.input`
 
     &::placeholder {
         color: #BABABA;
+        font-weight: 100;
     }
 `
 

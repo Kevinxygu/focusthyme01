@@ -21,6 +21,16 @@ const WebsiteList: React.FC<WebsiteListProps> = ({ visible, onHide }) => {
         }
     }, []);
 
+    const reloadList = () => {
+        const websiteListJSON: string[] = JSON.parse(localStorage.getItem(STORAGE_KEY_LIST) as string);
+        if (websiteListJSON) {
+            setWebsiteList(websiteListJSON);
+        } else {
+            setWebsiteList([]);
+        }
+
+    }
+
     const handleAddWebsite = () => {
         if (newWebsite.trim() !== "") {
             const updatedList = [...websiteList, newWebsite];
@@ -50,7 +60,7 @@ const WebsiteList: React.FC<WebsiteListProps> = ({ visible, onHide }) => {
             </Styled.InputContainer>
             <Styled.websiteContainer>
                 {websiteList.map((object, index) => {
-                    return <Website key={index} text={object} />
+                    return <Website key={index} text={object} refresh={reloadList} />
                 })}
             </Styled.websiteContainer>
         </Styled.Container>
