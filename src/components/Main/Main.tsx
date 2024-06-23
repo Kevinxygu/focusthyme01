@@ -8,17 +8,46 @@ const Main = () => {
     const STORAGE_KEY_ACTIVE: string = "active";
     const [isActive, setIsActive] = useState<boolean>(false);
     const [websiteList, setWebsiteList] = useState<string[]>([]);
-    const [shouldBlock, setShouldBlock] = useState<boolean>(false);
     const [websiteListVisible, setWebsiteListVisible] = useState<boolean>(false);
 
     const handleButtonClick = () => {
         if (isActive) {
+            console.log("Going from true to false");
             localStorage.setItem(STORAGE_KEY_ACTIVE, String(false));
             setIsActive(false);
         } else {
+            console.log("Going from false to true")
             localStorage.setItem(STORAGE_KEY_ACTIVE, String(true));
             setIsActive(true);
         }
+
+        // send message to content.js for list
+        // chrome.runtime.sendMessage({
+        //     type: 'UPDATE_WEBSITE_LIST',
+        //     data: websiteList
+        // });
+
+        // chrome.runtime.sendMessage({
+        //     type: 'UPDATE_ACTIVE',
+        //     data: isActive
+        // });
+
+        // store into chrome storage
+        console.log("chrome sync says:")
+        console.log(isActive);
+        console.log("^ isActive");
+        chrome.storage.sync.set({ [STORAGE_KEY_ACTIVE]: isActive }, () => {
+            chrome.storage.sync.get([STORAGE_KEY_ACTIVE], (result) => {
+                console.log(result[STORAGE_KEY_ACTIVE]);
+            });
+        });  
+        
+        console.log("chrome sync says:")
+        chrome.storage.sync.set({ [STORAGE_KEY_LIST]: websiteList }, () => {
+            chrome.storage.sync.get([STORAGE_KEY_LIST], (result) => {
+                console.log(result[STORAGE_KEY_LIST]);
+            });
+        });   
     };
 
     useEffect(() => {
@@ -37,20 +66,6 @@ const Main = () => {
             setIsActive(isActiveJSON);
         }
 
-        // testing
-        // console.log(isActiveJSON);
-        // console.log(typeof isActiveJSON);
-
-        // console.log(websiteListJSON);
-        // console.log(typeof websiteListJSON);
-        // start script to determine shouldBlock
-        if (isActive) {
-            const currentUrl = window.location.hostname;
-            const shouldBlockSite = websiteList.some(site => currentUrl.includes(site));
-            setShouldBlock(shouldBlockSite);
-        } else {
-            setShouldBlock(false);
-        }
     }, [isActive, websiteList]);
 
 

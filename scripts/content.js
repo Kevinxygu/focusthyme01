@@ -4,13 +4,26 @@ console.log("This is the content!")
 const STORAGE_KEY_LIST = "list";
 const STORAGE_KEY_ACTIVE = "active";
 
+const list = [];
+const active = false;
+
+// get list and active
+chrome.storage.sync.get([STORAGE_KEY_ACTIVE], (result) => {
+    active = result[STORAGE_KEY_ACTIVE];
+});
+
+chrome.storage.sync.get([STORAGE_KEY_LIST],(result) => {
+    list = result[STORAGE_KEY_LIST];
+});
+
 // const isActive = JSON.parse(localStorage.getItem(STORAGE_KEY_ACTIVE));
 // const list = JSON.parse(localStorage.getItem(STORAGE_KEY_LIST));
 
+// temp
+const toBlock = ["www.reddit.com", "www.youtube.com", "www.taobao.com"]
 const currentDomain = window.location.hostname;
 
-// temporary; just for usefulness in short term (need to add later!)
-const toBlock = ["www.youtube.com", "www.instagram.com", "www.reddit.com", "www.taobao.com"]
+alert(JSON.stringify(list));
 
 if (toBlock.some(site => currentDomain.includes(site))) {
     document.body.innerHTML = '<p> pp </p> <div id="image"></div>';
