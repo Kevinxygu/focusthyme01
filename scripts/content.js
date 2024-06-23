@@ -12,8 +12,8 @@ chrome.storage.sync.get([STORAGE_KEY_ACTIVE], (resultActive) => {
     chrome.storage.sync.get([STORAGE_KEY_LIST], (resultList) => {
         const list = resultList[STORAGE_KEY_LIST] || [];
         
-        alert(JSON.stringify(list));
-        alert(JSON.stringify(active));
+        // alert(JSON.stringify(list));
+        // alert(JSON.stringify(active));
 
         if (list.some(site => currentDomain.includes(site)) && !active) {
             document.body.innerHTML = '<p> pp </p> <div id="image"></div>';
