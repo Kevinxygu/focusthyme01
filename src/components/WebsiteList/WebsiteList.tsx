@@ -36,8 +36,10 @@ const WebsiteList: React.FC<WebsiteListProps> = ({ visible, onHide }) => {
             const updatedList = [...websiteList, newWebsite];
             setWebsiteList(updatedList);
             localStorage.setItem(STORAGE_KEY_LIST, JSON.stringify(updatedList));
-            setNewWebsite('');
-        }
+            chrome.storage.sync.set({ [STORAGE_KEY_LIST]: updatedList }, () => {
+                console.log("stored to chrome sync");
+            });
+        };
     };
 
     return (
