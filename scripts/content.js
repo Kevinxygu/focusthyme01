@@ -1,9 +1,10 @@
 console.log("This is the content!");
 
+// content.js is what alters the HTML CSS to block the website
 const STORAGE_KEY_LIST = "list";
 const STORAGE_KEY_ACTIVE = "active";
 
-const toBlock = ["www.reddit.com", "www.youtube.com", "www.taobao.com"];
+// const toBlock = ["www.reddit.com", "www.youtube.com", "www.taobao.com"];
 const currentDomain = window.location.hostname;
 
 chrome.storage.sync.get([STORAGE_KEY_ACTIVE], (resultActive) => {
