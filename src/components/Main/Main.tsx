@@ -86,7 +86,7 @@ const Main = () => {
 
     }, [isActive, websiteList]);
 
-
+    // Main component that is rendered back.
     return (
         <>
             <Styled.GlobalStyle />
