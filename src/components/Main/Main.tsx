@@ -2,21 +2,34 @@ import React, { useEffect, useState } from 'react';
 import * as Styled from './Main.styles';
 import WebsiteList from '../WebsiteList/WebsiteList';
 
-// Main page component; has the main button + buttons for WebsiteList.tsx
+// Main page component; has the main on/off button + buttons for WebsiteList.tsx
 const Main = () => {
+    // constants
     const STORAGE_KEY_LIST: string = "list";
     const STORAGE_KEY_ACTIVE: string = "active";
+
+    // React states
+    // isActive == determines if we should be blocking websites or not
     const [isActive, setIsActive] = useState<boolean>(false);
+
+    // this is the list of websites to block
     const [websiteList, setWebsiteList] = useState<string[]>([]);
+
+    // this is a state, on whether or not the list of websites is visible or not
     const [websiteListVisible, setWebsiteListVisible] = useState<boolean>(false);
 
+    // function: toggles the current active state, and also refreshes the list of website
     const handleButtonClick = () => {
+        // update front end to reflect changes
         if (isActive) {
-            console.log("Going from true to false");
+            // console.log("Going from true to false");
+
+            // Update localStorage to reflect changes to front-end
             localStorage.setItem(STORAGE_KEY_ACTIVE, String(false));
             setIsActive(false);
         } else {
-            console.log("Going from false to true")
+            // console.log("Going from false to true")
+            // Update localStorage to reflect changes to front-end
             localStorage.setItem(STORAGE_KEY_ACTIVE, String(true));
             setIsActive(true);
         }
@@ -33,16 +46,20 @@ const Main = () => {
         // });
 
         // store into chrome storage
-        console.log("chrome sync says:")
-        console.log(isActive);
-        console.log("^ isActive");
+        // console.log("chrome sync says:")
+        // console.log(isActive);
+        // console.log("^ isActive");
+
+        // chrome Storage: set Active
         chrome.storage.sync.set({ [STORAGE_KEY_ACTIVE]: isActive }, () => {
             chrome.storage.sync.get([STORAGE_KEY_ACTIVE], (result) => {
                 console.log(result[STORAGE_KEY_ACTIVE]);
             });
         });  
         
-        console.log("chrome sync says:")
+        // console.log("chrome sync says:")
+
+        // chrome Storage: set list of websites
         chrome.storage.sync.set({ [STORAGE_KEY_LIST]: websiteList }, () => {
             chrome.storage.sync.get([STORAGE_KEY_LIST], (result) => {
                 console.log(result[STORAGE_KEY_LIST]);
@@ -50,6 +67,7 @@ const Main = () => {
         });   
     };
 
+    // update existing value every time
     useEffect(() => {
         // load in values from localStorage
         // load in website list
