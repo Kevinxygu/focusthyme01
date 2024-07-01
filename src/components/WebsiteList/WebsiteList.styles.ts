@@ -88,7 +88,7 @@ export const InputBox = styled.input`
 `
 
 export const TooltipText = styled.span`
-    width: 100px;
+    width: 150px;
     background-color: #BABABA;
     color: #fff;
     text-align: center;
@@ -100,6 +100,7 @@ export const TooltipText = styled.span`
     transform: translateX(-50%);
     transition: 0.3s ease;
     z-index: 1;
+    font-size: 11px;
 `
 
 export const SendButton = styled.img`

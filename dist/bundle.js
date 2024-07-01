@@ -217,7 +217,7 @@ margin-top: 80px;
         font-weight: 100;
     }
 `,t.TooltipText=a.default.span`
-    width: 100px;
+    width: 150px;
     background-color: #BABABA;
     color: #fff;
     text-align: center;
@@ -229,6 +229,7 @@ margin-top: 80px;
     transform: translateX(-50%);
     transition: 0.3s ease;
     z-index: 1;
+    font-size: 11px;
 `,t.SendButton=a.default.img`
     max-width: 20px;
     cursor: pointer;

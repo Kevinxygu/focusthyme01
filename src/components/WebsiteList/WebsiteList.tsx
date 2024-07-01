@@ -57,7 +57,7 @@ const WebsiteList: React.FC<WebsiteListProps> = ({ visible, onHide }) => {
                     onBlur={() => setInputFocused(false)}
                     placeholder="Add new..."
                 />
-                {inputFocused && <Styled.TooltipText>Double-check if your website has www!</Styled.TooltipText>}
+                {inputFocused && <Styled.TooltipText>Double-check if your website has www at the front!</Styled.TooltipText>}
                 <Styled.SendButton src='images/send.png' onClick={handleAddWebsite} />
             </Styled.InputContainer>
             <Styled.websiteContainer>
