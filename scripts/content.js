@@ -36,18 +36,3 @@ chrome.storage.sync.get([STORAGE_KEY_ACTIVE], (resultActive) => {
         }
     });
 });
-
-
-    // const overlay = document.createElement('div');
-    // overlay.id = 'focus-overlay';
-    // overlay.style.position = 'fixed';
-    // overlay.style.top = '0';
-    // overlay.style.left = '0';
-    // overlay.style.width = '100%';
-    // overlay.style.height = '100%';
-    // overlay.style.backgroundImage = 'url(chrome-extension://__MSG_@@extension_id__/images/overlay.png)';
-    // overlay.style.backgroundSize = 'cover';
-    // overlay.style.zIndex = '10000';
-    // overlay.style.pointerEvents = 'none'; // Prevent interaction with the overlay
-    // document.body.innerHTML = ''; // Clear the existing content
-    // document.body.appendChild(overlay);
