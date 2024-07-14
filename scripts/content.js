@@ -2,8 +2,6 @@
 const STORAGE_KEY_LIST = "list";
 const STORAGE_KEY_ACTIVE = "active";
 
-// const toBlock = ["www.reddit.com", "www.youtube.com", "www.taobao.com"];
-
 // retrieves current domain (eg. youtube.com, reddit.com, etc.)
 const currentDomain = window.location.hostname;
 
