@@ -34,22 +34,6 @@ const Main = () => {
             setIsActive(true);
         }
 
-        // send message to content.js for list
-        // chrome.runtime.sendMessage({
-        //     type: 'UPDATE_WEBSITE_LIST',
-        //     data: websiteList
-        // });
-
-        // chrome.runtime.sendMessage({
-        //     type: 'UPDATE_ACTIVE',
-        //     data: isActive
-        // });
-
-        // store into chrome storage
-        // console.log("chrome sync says:")
-        // console.log(isActive);
-        // console.log("^ isActive");
-
         // chrome Storage: set Active
         chrome.storage.sync.set({ [STORAGE_KEY_ACTIVE]: isActive }, () => {
             chrome.storage.sync.get([STORAGE_KEY_ACTIVE], (result) => {
