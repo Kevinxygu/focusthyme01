@@ -22,13 +22,11 @@ const Main = () => {
     const handleButtonClick = () => {
         // update front end to reflect changes
         if (isActive) {
-            // console.log("Going from true to false");
 
             // Update localStorage to reflect changes to front-end
             localStorage.setItem(STORAGE_KEY_ACTIVE, String(false));
             setIsActive(false);
         } else {
-            // console.log("Going from false to true")
             // Update localStorage to reflect changes to front-end
             localStorage.setItem(STORAGE_KEY_ACTIVE, String(true));
             setIsActive(true);
