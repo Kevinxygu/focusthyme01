@@ -9,7 +9,6 @@ chrome.runtime.onInstalled.addListener(() => {
     console.log("Installed!");
   });
 
-
 // Adds a listener to look at value changes for
 chrome.storage.onChanged.addListener((changes, namespace) => {
   for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
