@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import * as Styled from './WebsiteList.styles';
 import Website from './Website';
 
-// props for WebsiteList component to add soon
+// props for WebsiteList component needed
 interface WebsiteListProps {
     visible: boolean;
     onHide: () => void;
 }
 
+// List of websites that are blocked
 const WebsiteList: React.FC<WebsiteListProps> = ({ visible, onHide }) => {
     const STORAGE_KEY_LIST: string = "list";
     const [websiteList, setWebsiteList] = useState<string[]>([]);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import * as Styled from './Main.styles';
 import WebsiteList from '../WebsiteList/WebsiteList';
 
-// Main page component; has the main on/off button + buttons for WebsiteList.tsx
+// Main page component; has the main on/off button + buttons to toggle view for WebsiteList.tsx
 const Main = () => {
     // constants
     const STORAGE_KEY_LIST: string = "list";

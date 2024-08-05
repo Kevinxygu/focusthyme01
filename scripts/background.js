@@ -1,6 +1,5 @@
 // script to trigger background scripts and run content script
 
-// console.log("This is the background!")
 const STORAGE_KEY_LIST = "list";
 const STORAGE_KEY_ACTIVE = "active";
 

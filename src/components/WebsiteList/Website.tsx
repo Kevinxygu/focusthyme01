@@ -1,11 +1,13 @@
 import React from 'react';
 import * as Styled from './Website.styles';
 
+// Props needed to pass down to Website component from WebsiteList component
 interface WebsiteProps {
     text: string;
     refresh: () => void;
 }
 
+// Singular website component that is iterated over in WebsiteList.tsx and displays as a line item with other websites
 const Website: React.FC<WebsiteProps> = ({ text, refresh }) => {
     const STORAGE_KEY_LIST: string = "list";
 

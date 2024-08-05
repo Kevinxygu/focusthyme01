@@ -8,5 +8,3 @@ root.render(
     <Main />
   </React.StrictMode>
 );
-
-// TODO: Need to include reportWebVitals();
