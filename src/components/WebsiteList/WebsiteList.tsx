@@ -41,6 +41,8 @@ const WebsiteList: React.FC<WebsiteListProps> = ({ visible, onHide }) => {
                 console.log("stored to chrome sync");
             });
         };
+        reloadList();
+        setNewWebsite('');
     };
 
     return (
