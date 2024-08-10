@@ -11,13 +11,18 @@ interface WebsiteProps {
 const Website: React.FC<WebsiteProps> = ({ text, refresh }) => {
     const STORAGE_KEY_LIST: string = "list";
 
+    // Delete button functionality from chrome sync storage list
     const handleDelete = () => {
-        let list = JSON.parse(localStorage.getItem(STORAGE_KEY_LIST) || "[]");
-        list = list.filter((item: string) => item !== text);
-        localStorage.setItem(STORAGE_KEY_LIST, JSON.stringify(list));
-        refresh();
+        chrome.storage.sync.get([STORAGE_KEY_LIST], (result) => {
+            let list = result[STORAGE_KEY_LIST] || [];
+            list = list.filter((item: string) => item !== text);
+            chrome.storage.sync.set({ [STORAGE_KEY_LIST]: list }, () => {
+                refresh();
+            });
+        });
     };
 
+    // Render website component
     return (
         <Styled.Container>
             <Styled.Text>{text}</Styled.Text>

@@ -16,31 +16,33 @@ const WebsiteList: React.FC<WebsiteListProps> = ({ visible, onHide }) => {
     const [inputFocused, setInputFocused] = useState<boolean>(false);
 
     useEffect(() => {
-        const websiteListJSON: string[] = JSON.parse(localStorage.getItem(STORAGE_KEY_LIST) as string);
-        if (websiteListJSON) {
-            setWebsiteList(websiteListJSON);
-        }
+        chrome.storage.sync.get([STORAGE_KEY_LIST], (result) => {
+            const websiteListJSON: string[] = result[STORAGE_KEY_LIST];
+            if (websiteListJSON) {
+                setWebsiteList(websiteListJSON);
+            }
+        });
     }, []);
 
     const reloadList = () => {
-        const websiteListJSON: string[] = JSON.parse(localStorage.getItem(STORAGE_KEY_LIST) as string);
-        if (websiteListJSON) {
-            setWebsiteList(websiteListJSON);
-        } else {
-            setWebsiteList([]);
-        }
-
-    }
+        chrome.storage.sync.get([STORAGE_KEY_LIST], (result) => {
+            const websiteListJSON: string[] = result[STORAGE_KEY_LIST];
+            if (websiteListJSON) {
+                setWebsiteList(websiteListJSON);
+            } else {
+                setWebsiteList([]);
+            }
+        });
+    };
 
     const handleAddWebsite = () => {
         if (newWebsite.trim() !== "") {
             const updatedList = [...websiteList, newWebsite];
             setWebsiteList(updatedList);
-            localStorage.setItem(STORAGE_KEY_LIST, JSON.stringify(updatedList));
             chrome.storage.sync.set({ [STORAGE_KEY_LIST]: updatedList }, () => {
                 console.log("stored to chrome sync");
             });
-        };
+        }
         reloadList();
         setNewWebsite('');
     };
@@ -65,11 +67,11 @@ const WebsiteList: React.FC<WebsiteListProps> = ({ visible, onHide }) => {
             </Styled.InputContainer>
             <Styled.websiteContainer>
                 {websiteList.map((object, index) => {
-                    return <Website key={index} text={object} refresh={reloadList} />
+                    return <Website key={index} text={object} refresh={reloadList} />;
                 })}
             </Styled.websiteContainer>
         </Styled.Container>
-    )
-}
+    );
+};
 
 export default WebsiteList;

@@ -20,53 +20,36 @@ const Main = () => {
 
     // function: toggles the current active state, and also refreshes the list of website
     const handleButtonClick = () => {
-        // update front end to reflect changes
-        if (isActive) {
-
-            // Update localStorage to reflect changes to front-end
-            localStorage.setItem(STORAGE_KEY_ACTIVE, String(false));
-            setIsActive(false);
-        } else {
-            // Update localStorage to reflect changes to front-end
-            localStorage.setItem(STORAGE_KEY_ACTIVE, String(true));
-            setIsActive(true);
-        }
+        const newIsActive = !isActive;
+        setIsActive(newIsActive);
 
         // chrome Storage: set Active
-        chrome.storage.sync.set({ [STORAGE_KEY_ACTIVE]: isActive }, () => {
+        chrome.storage.sync.set({ [STORAGE_KEY_ACTIVE]: newIsActive }, () => {
             chrome.storage.sync.get([STORAGE_KEY_ACTIVE], (result) => {
                 console.log(result[STORAGE_KEY_ACTIVE]);
             });
-        });  
-        
-        // console.log("chrome sync says:")
+        });
 
         // chrome Storage: set list of websites
         chrome.storage.sync.set({ [STORAGE_KEY_LIST]: websiteList }, () => {
             chrome.storage.sync.get([STORAGE_KEY_LIST], (result) => {
                 console.log(result[STORAGE_KEY_LIST]);
             });
-        });   
+        });
     };
 
     // update existing value every time
     useEffect(() => {
-        // load in values from localStorage
-        // load in website list
-        // const tempList = ["www.youtube.com", "www.reddit.com"]
-        // localStorage.setItem(STORAGE_KEY_LIST, JSON.stringify(tempList));
-        const websiteListJSON : string[] = JSON.parse(localStorage.getItem(STORAGE_KEY_LIST) as string);
-        if (websiteListJSON) {
-            setWebsiteList(websiteListJSON);
-        } // consider: may need to add a dependency
-
-        // load in active
-        const isActiveJSON : boolean = JSON.parse(localStorage.getItem(STORAGE_KEY_ACTIVE) as string);
-        if (typeof isActiveJSON !== 'undefined' && isActiveJSON !== null) {
-            setIsActive(isActiveJSON);
-        }
-
-    }, [isActive, websiteList]);
+        // load in values from chrome.storage.sync
+        chrome.storage.sync.get([STORAGE_KEY_LIST, STORAGE_KEY_ACTIVE], (result) => {
+            if (result[STORAGE_KEY_LIST]) {
+                setWebsiteList(result[STORAGE_KEY_LIST]);
+            }
+            if (typeof result[STORAGE_KEY_ACTIVE] !== 'undefined') {
+                setIsActive(result[STORAGE_KEY_ACTIVE]);
+            }
+        });
+    }, []);
 
     // Main component that is rendered back.
     return (

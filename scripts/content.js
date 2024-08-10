@@ -16,7 +16,7 @@ chrome.storage.sync.get([STORAGE_KEY_ACTIVE], (resultActive) => {
         const list = resultList[STORAGE_KEY_LIST] || [];
 
         // check: if running and the current domain is part of the banned list, go and block the page by loading image
-        if (list.some(site => currentDomain.includes(site)) && !active) {
+        if (list.some(site => currentDomain.includes(site)) && active) {
             document.body.innerHTML = '<p> pp </p> <div id="image"></div>';
 
             const img = document.createElement('img');
