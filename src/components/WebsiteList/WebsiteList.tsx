@@ -15,15 +15,12 @@ const WebsiteList: React.FC<WebsiteListProps> = ({ visible, onHide }) => {
     const [newWebsite, setNewWebsite] = useState<string>('');
     const [inputFocused, setInputFocused] = useState<boolean>(false);
 
+    // refresh the list of websites from chrome storage (part of useEffect)
     useEffect(() => {
-        chrome.storage.sync.get([STORAGE_KEY_LIST], (result) => {
-            const websiteListJSON: string[] = result[STORAGE_KEY_LIST];
-            if (websiteListJSON) {
-                setWebsiteList(websiteListJSON);
-            }
-        });
+        reloadList();
     }, []);
 
+    // reload the list of websites
     const reloadList = () => {
         chrome.storage.sync.get([STORAGE_KEY_LIST], (result) => {
             const websiteListJSON: string[] = result[STORAGE_KEY_LIST];
@@ -35,6 +32,7 @@ const WebsiteList: React.FC<WebsiteListProps> = ({ visible, onHide }) => {
         });
     };
 
+    // add a website to the list
     const handleAddWebsite = () => {
         if (newWebsite.trim() !== "") {
             const updatedList = [...websiteList, newWebsite];
@@ -47,6 +45,14 @@ const WebsiteList: React.FC<WebsiteListProps> = ({ visible, onHide }) => {
         setNewWebsite('');
     };
 
+    // handle enter key press
+    const handleEnterKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            handleAddWebsite();
+        }
+    };
+
+    // component to render
     return (
         <Styled.Container visible={visible}>
             <Styled.Header>Your blocked sites</Styled.Header>
@@ -60,6 +66,11 @@ const WebsiteList: React.FC<WebsiteListProps> = ({ visible, onHide }) => {
                     onChange={(e) => setNewWebsite(e.target.value)}
                     onFocus={() => setInputFocused(true)}
                     onBlur={() => setInputFocused(false)}
+                    onKeyUp={(e) => {
+                        if (e.key === 'Enter') {
+                            handleAddWebsite();
+                        }
+                    }}
                     placeholder="Add new..."
                 />
                 {inputFocused && <Styled.TooltipText>Double-check if your website has www at the front!</Styled.TooltipText>}

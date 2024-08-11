@@ -56,6 +56,7 @@ export const websiteContainer = styled.div`
     max-height: 200px;
     margin-top: 30px;
     background-color: #FFFFFF;
+    overflow-y: auto;
 `
 
 export const InputContainer = styled.div`
