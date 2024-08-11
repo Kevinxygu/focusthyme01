@@ -4,7 +4,7 @@ FocusThyme is a productivity Chrome extension which blocks distracting websites.
 
 ## :book: Learnings
 
-The main purpose of this project was to learn more about:
+The main purpose of this project was to learn. I especially enjoyed learning about:
 | Technology | Learnings |
 |------------|-------------|
 | TypeScript | This was my first project with TypeScript, and let me familiarize myself before I developed larger TypeScript projects. The project was simple and helped me grasp the fundamentals. |
