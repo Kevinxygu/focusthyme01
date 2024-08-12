@@ -9,7 +9,7 @@ The main purpose of this project was to learn. I especially enjoyed learning abo
 |:---|:---|
 | TypeScript | This was my first project with TypeScript, and let me familiarize myself before I developed larger TypeScript projects. The project was simple and helped me grasp the fundamentals. |
 | Chrome API | Since I developing a Chrome extension, I learned about and used the [Chrome API](https://developer.chrome.com/docs/extensions/reference/api). I especially enjoyed learning about `storage.sync`, allowing users to sync data across browsers. |
-| Content Scripts    | These are files/scripts that run in the context of web pages, and allow extensions to interact with webpages. Docs are [here](https://developer.chrome.com/docs/extensions/develop/concepts/content-scripts)|
+| Content Scripts    | These are files/scripts that run in the context of web pages, and allow extensions to interact with webpages by editing content, reading content, etc. Docs are [here](https://developer.chrome.com/docs/extensions/develop/concepts/content-scripts) and I used them to block websites|
 
 ## :city_sunrise: Future Features + Considerations
 [Aug 10]: Turning on/off focus mode is still too "easy." To enforce good habit-building, I'm currently exploring the following features and implementing:
