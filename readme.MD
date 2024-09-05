@@ -1,6 +1,6 @@
 # :herb: FocusThyme
 
-FocusThyme is a productivity Chrome extension which blocks distracting websites.
+FocusThyme is a productivity Chrome extension that blocks distracting websites.
 
 ## :book: Learnings
 
