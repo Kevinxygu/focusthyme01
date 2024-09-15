@@ -12,7 +12,7 @@ The main purpose of this project was to learn. I especially enjoyed learning abo
 | [Content Scripts](https://developer.chrome.com/docs/extensions/develop/concepts/content-scripts)  | These are files/scripts that run in the context of web pages, and allow extensions to interact with webpages by editing content, reading content, etc. For this project, I used them to block websites|
 
 ## :city_sunrise: Future Features + Considerations
-[Aug 10]: Turning on/off focus mode is still too "easy." To enforce good habit-building, I'm currently exploring the following features and implementing:
+[Summer 2024]: Turning on/off focus mode is still too "easy." To enforce good habit-building, I'm currently exploring the following features and implementing:
 
 1. A time period for focus mode. After being in focus mode for a set period, users can turn off the mode.
 2. Users can save others' phone numbers. If the user attempts turning off focus mode before time is up, a password is texted to those phone numbers and the user must ask for the password to turn it off early. This upholds accountability partners and makes exiting focus mode early a tedious, high-friction task.
